@@ -19,7 +19,7 @@ type DetectionMode = 'truck' | 'sugar';
 
 export default function LiveDetection() {
     const [isStreaming, setIsStreaming] = useState(false);
-    const [cameraSource, setCameraSource] = useState('0');
+    const [cameraSource, setCameraSource] = useState('');
     const [detections, setDetections] = useState<Detection[]>([]);
     const [loading, setLoading] = useState(false);
     const [models, setModels] = useState<ModelsInfo | null>(null);
@@ -313,7 +313,7 @@ export default function LiveDetection() {
                                     onClick={startCamera}
                                     disabled={loading}
                                 >
-                                    {loading ? 'Starting...' : (isUploaded ? 'Start Detection' : 'Start Camera')}
+                                    {loading ? 'Starting...' : (isUploaded ? 'Start Detection' : 'Start Stream')}
                                 </button>
                             )}
                             <label className="btn btn-secondary" style={{ cursor: 'pointer' }}>
@@ -346,7 +346,7 @@ export default function LiveDetection() {
                             <div className="video-placeholder">
                                 <p>No camera connected</p>
                                 <p className="text-muted" style={{ fontSize: '0.8rem' }}>
-                                    Click Start to begin streaming
+                                    Click Start Stream to begin streaming
                                 </p>
                             </div>
                         )}
