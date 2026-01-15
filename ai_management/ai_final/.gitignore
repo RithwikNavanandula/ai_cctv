@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Models & Large Files
+models/
+*.pt
+*.onnx
+*.mp4
+*.avi
+header.png
+backend/models/
+backend/video_storage/
+backend/scans/
+
+# Node
+node_modules/
+dist/
+.DS_Store
+
+*.log
