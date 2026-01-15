@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { apiGet, apiPost, apiDelete, API_URL } from '../lib/api';
-import './LabelScanner.css';
+
 
 interface Scan {
     id: string;
