@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import LiveDetection from './pages/LiveDetection';
@@ -19,7 +19,7 @@ const isAuthenticated = () => !!localStorage.getItem('token');
 
 function App() {
     return (
-        <Router basename="/ai_cctv">
+        <Router>
             <Routes>
                 <Route path="/login" element={<Login />} />
 

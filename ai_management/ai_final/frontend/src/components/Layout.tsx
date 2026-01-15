@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { clearToken } from '../lib/api';
 
 interface LayoutProps {
@@ -64,9 +64,9 @@ export default function Layout({ userName = 'Demo Admin', userRole = 'admin' }: 
 
             <aside className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
                 <div className="sidebar-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <a href="/" className="sidebar-logo">
+                    <Link to="/" className="sidebar-logo">
                         <span>AI CCTV</span>
-                    </a>
+                    </Link>
                     <button
                         className="mobile-close-btn"
                         onClick={closeSidebar}

@@ -120,7 +120,9 @@ export default function LiveDetection() {
     async function startCamera() {
         setLoading(true);
         try {
-            await apiPost('/api/v1/camera/start', { source: cameraSource });
+            // Default to 0 (webcam) if input is empty
+            const source = cameraSource.trim() === '' ? 0 : cameraSource;
+            await apiPost('/api/v1/camera/start', { source });
             setIsStreaming(true);
             addToast(isUploaded ? 'Processing video...' : 'Camera started', 'success');
         } catch (err) {
